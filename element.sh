@@ -6,7 +6,7 @@ then
   echo "Please provide an element as an argument."
   exit
 
-elif [[ $1 =~ ^[+-]?[0-9]+$ ]]; then
+elif [[ $1 =~ ^[+-]?[0-9]+$ ]]; then  #https://stackoverflow.com/questions/806906/how-do-i-test-if-a-variable-is-a-number-in-bash?page=1&tab=scoredesc#tab-top, F.Hauri
   atomicnumbers=$($PSQL "select atomic_number from elements;")
   if [[ ! $atomicnumbers =~ $1 ]]; then
     echo "I could not find that element in the database."
